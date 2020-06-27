@@ -1,0 +1,107 @@
+import React from 'react'
+import { View } from 'react-native'
+import { User } from '@/api/User'
+import CAlert from '@components/CAlert'
+import CButton from '@components/CButton'
+import CInput from '@components/CInput'
+import CText from '@components/CText'
+import { FormItems } from '@utils/form/FormItems'
+import ColorVariable from '@styles/ColorVariable'
+import CommonStyles from '@styles/CommonStyles'
+import SizeVariable from '@styles/SizeVariable'
+import { getWithoutProps } from '@utils/Object'
+import { Captcha, CodeType } from '@/api/Capcha'
+import { useForm } from '@livelybone/react-form'
+import { AppRoutes } from '@/route'
+import { pendingPromise } from '@utils/CommonFn'
+import { useFocusEffect } from '@react-navigation/native'
+import { useImgCaptcha } from '@components/ImgCaptcha'
+
+const ForgetPwd: React.FC<ScreenProps> = () => {
+  const form = useForm(
+    FormItems.getItems([
+      'phone',
+      'imgCode',
+      'verifyCode',
+      'signInPwdNew',
+      'pwdConfirm',
+    ]),
+  )
+
+  useFocusEffect(() => {
+    form.itemsChange(global.route.params?.formData, false)
+  })
+
+  const onPress = () => {
+    if (form.pristine) {
+      return CAlert('手机号不能为空')
+    } else if (!form.valid) {
+      return CAlert(form.errorText)
+    } else {
+      return User.forgetPwd(form.data)
+    }
+  }
+
+  const source = useImgCaptcha()
+
+  const options = {
+    uri: source.data.uri,
+    refresh: source.getData,
+    sendCode: () => {
+      const item = form.getItemByName('phone')!
+      if (!item.valid) {
+        CAlert(item.errorText)
+        return pendingPromise()
+      } else {
+        return Captcha.send({
+          type: CodeType.ForgetSignInPwd,
+          ...getWithoutProps(form.data, ['password', 'confirmPwd']),
+          img_id: source.data.id,
+        })
+      }
+    },
+  }
+
+  return (
+    <View style={{ paddingHorizontal: SizeVariable.padding }}>
+      <CText fontSize={25} fontWeight="600" margin="30 0 50">
+        找回密码
+      </CText>
+      {form.items.map(item => (
+        <CInput
+          {...getWithoutProps(item, ['label'])}
+          options={options}
+          key={item.name}
+          onChangeText={value => form.itemChange(item.name, value)}
+        />
+      ))}
+      <CButton
+        style={{ ...CommonStyles.submitBtn, marginHorizontal: 0 }}
+        onPress={onPress}
+      >
+        确认提交
+      </CButton>
+      <View
+        style={{
+          marginTop: 60,
+          flexDirection: 'row',
+          justifyContent: 'flex-start',
+        }}
+      >
+        <CText color={ColorVariable.fontLight}>还没有账号？</CText>
+        <CButton
+          bgColor="transparent"
+          borderColor="transparent"
+          color={ColorVariable.main}
+          onPress={() => {
+            global.navigation.push(...AppRoutes.SignUp({ formData: form.data }))
+          }}
+        >
+          立即注册
+        </CButton>
+      </View>
+    </View>
+  )
+}
+
+export default ForgetPwd

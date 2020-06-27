@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@imgs/*": [
+        "static/imgs/*"
+      ],
+      "@static/*": [
+        "static/*"
+      ],
+      "@components/*": [
+        "src/common/components/*"
+      ],
+      "@services/*": [
+        "src/common/services/*"
+      ],
+      "@styles/*": [
+        "src/common/styles/*"
+      ],
+      "@utils/*": [
+        "src/common/utils/*"
+      ],
+      "@models/*": [
+        "src/store/models/*"
+      ],
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": [
+      "ESNext"
+    ],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "target": "esnext"
+  },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
+}

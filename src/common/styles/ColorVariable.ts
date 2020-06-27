@@ -1,0 +1,18 @@
+export default {
+  main: '#4a7cf7',
+  btnBorderColor: '#E5E9EF',
+  tableBorder: '#F3F6FA',
+  inputBorder: '#E5E9EF',
+  font: '#333',
+  fontLight: '#939AA2',
+  fontLighter: '#C9D3DA',
+  placeholder: '#C9D3DA',
+  disabled: '#C9D3DA',
+  white: '#fff',
+  red: '#e95356',
+  green: '#449756',
+  bg: '#F3F6FA',
+  bgDark: '#1E344D',
+  bgDarker: '#09151F',
+  yellow: '#FFBC41',
+}
