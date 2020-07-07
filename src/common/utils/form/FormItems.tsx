@@ -1,17 +1,13 @@
 import { FormItemsManager } from '@livelybone/form'
 import React from 'react'
-import { Image, TouchableOpacity, View } from 'react-native'
 import CText from '@components/CText'
 import Scan from '@components/Scan'
 import SendVerifyCode from '@components/SendVerifyCode'
 import ColorVariable from '@styles/ColorVariable'
 import SizeVariable from '@styles/SizeVariable'
-import { phoneValidator, pwdValidator } from '@utils/Validators'
-import useAsyncData from '@livelybone/use-async-data'
-import { Captcha } from '@/api/Capcha'
-import CAlert from '@components/CAlert'
-import useMounted from '@livelybone/use-mounted'
+import { phoneValidator, pwdValidator } from '@utils/form/Validators'
 import ImgCaptcha from '@components/ImgCaptcha'
+import { trimFormatter } from '@utils/form/Formatters'
 
 const items = {
   verifyCode: {
@@ -65,6 +61,13 @@ const items = {
     validator: pwdValidator,
   },
 
+  username: {
+    label: '用户名',
+    name: 'username' as const,
+    value: '',
+    placeholder: '请输入用户名',
+    formatter: trimFormatter,
+  },
   phone: {
     name: 'phone' as const,
     value: '',

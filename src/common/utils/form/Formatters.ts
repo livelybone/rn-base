@@ -15,3 +15,7 @@ export function amountFormatter(val, { precision }) {
   }
   return `${(+int).toString()}.${decimal.substr(0, precision)}`
 }
+
+export function trimFormatter(val: string) {
+  return val.replace(/^\s+|\s+$/g, '')
+}

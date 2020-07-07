@@ -27,9 +27,9 @@ export class Msg {
       return {
         id: 'user-agreement',
         title: '用户注册协议',
-        content: '用户注册协议内容',
+        content: '用户注册协议内容；用户注册协议内容；用户注册协议内容；用户注册协议内容；用户注册协议内容；用户注册协议内容；用户注册协议内容；用户注册协议内容；用户注册协议内容；用户注册协议内容；用户注册协议内容；用户注册协议内容；用户注册协议内容；用户注册协议内容；用户注册协议内容；用户注册协议内容；',
         resume: '用户注册协议',
-        author: 'CMWallet 团队',
+        author: 'Author',
       }
     }
     return Http.get('/msgs/detail', { id })

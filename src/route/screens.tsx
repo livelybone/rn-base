@@ -98,6 +98,10 @@ export default {
     {
       title: '',
     },
-    { id: '' as number | string },
+    {
+      id: '' as number | string,
+      noScroll: true,
+      headerShadowDisabled: true,
+    },
   ),
 }

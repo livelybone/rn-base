@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View } from 'react-native'
 import CAlert from '@components/CAlert'
 import CButton from '@components/CButton'
@@ -16,10 +16,13 @@ import { User } from '@/api/User'
 import { AppRoutes } from '@/route'
 import { useFocusEffect } from '@react-navigation/native'
 import { useImgCaptcha } from '@components/ImgCaptcha'
+import CCheckbox from '@components/CCheckbox'
 
 const SignUp: React.FC<ScreenProps> = () => {
+  const [agree, setAgree] = useState(false)
   const form = useForm(
     FormItems.getItems([
+      'username',
       'phone',
       'imgCode',
       'verifyCode',
@@ -33,7 +36,8 @@ const SignUp: React.FC<ScreenProps> = () => {
   )
 
   useFocusEffect(() => {
-    form.itemsChange(global.route.params?.formData, false)
+    const formData = global.route.params?.formData
+    if (formData) form.itemsChange(formData, false)
   })
 
   const source = useImgCaptcha()
@@ -57,7 +61,9 @@ const SignUp: React.FC<ScreenProps> = () => {
   }
 
   const onPress = () => {
-    if (form.pristine) {
+    if (!agree) {
+      return CAlert('请阅读并同意用户协议！')
+    } else if (form.pristine) {
       return CAlert('手机号不能为空')
     } else if (!form.valid) {
       return CAlert(form.errorText)
@@ -95,12 +101,13 @@ const SignUp: React.FC<ScreenProps> = () => {
           justifyContent: 'center',
         }}
       >
-        <CText
-          fontSize={SizeVariable.fontSubContent}
-          color={ColorVariable.fontLight}
-        >
-          注册即同意
-        </CText>
+        <CCheckbox checked={agree} onChange={setAgree}>
+          {style => (
+            <CText fontSize={SizeVariable.fontSubContent} style={style}>
+              阅读并同意
+            </CText>
+          )}
+        </CCheckbox>
         <CButton
           bgColor="transparent"
           borderColor="transparent"

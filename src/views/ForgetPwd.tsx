@@ -29,7 +29,8 @@ const ForgetPwd: React.FC<ScreenProps> = () => {
   )
 
   useFocusEffect(() => {
-    form.itemsChange(global.route.params?.formData, false)
+    const formData = global.route.params?.formData
+    if (formData) form.itemsChange(formData, false)
   })
 
   const onPress = () => {

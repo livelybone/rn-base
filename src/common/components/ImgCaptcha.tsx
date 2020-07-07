@@ -5,6 +5,7 @@ import useMounted from '@livelybone/use-mounted'
 import { Image, TouchableOpacity } from 'react-native'
 import CText from '@components/CText'
 import React from 'react'
+import ColorVariable from '@styles/ColorVariable'
 
 const ImgCaptcha: React.FC<{ uri: string; refresh(): void }> = ({
   uri,
@@ -15,7 +16,9 @@ const ImgCaptcha: React.FC<{ uri: string; refresh(): void }> = ({
       {uri ? (
         <Image source={{ uri }} style={{ width: 76, height: 31 }} />
       ) : (
-        <CText style={{ width: 76, height: 31 }}>...fetching</CText>
+        <CText color={ColorVariable.red} style={{ width: 76, height: 31 }}>
+          ...fetching
+        </CText>
       )}
     </TouchableOpacity>
   )

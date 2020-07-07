@@ -12,7 +12,7 @@ const Article: React.FC<ScreenProps> = () => {
   const info = useAsyncData(
     () =>
       Msg.detail(global.route.params?.id).then(res => {
-        global.navigation.setOptions({ title: res.title })
+        // global.navigation.setOptions({ title: res.title })
         return res
       }),
     null as null | ArticleItem,
