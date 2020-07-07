@@ -69,6 +69,7 @@ const items = {
     formatter: trimFormatter,
   },
   phone: {
+    label: '手机号',
     name: 'phone' as const,
     value: '',
     placeholder: '请输入手机号',
@@ -81,6 +82,7 @@ const items = {
     validator: phoneValidator,
   },
   imgCode: {
+    label: '图形验证码',
     name: 'imgCode' as const,
     value: '',
     placeholder: '请输入图形验证码',
@@ -89,6 +91,7 @@ const items = {
     required: false,
   },
   password: {
+    label: '密码',
     name: 'password' as const,
     value: '',
     placeholder: '请输入6～16位字母加数字密码',
@@ -96,6 +99,7 @@ const items = {
     validator: pwdValidator,
   },
   recommendCode: {
+    label: '邀请码',
     name: 'recommendCode' as const,
     value: '',
     placeholder: '邀请码（选填）',
