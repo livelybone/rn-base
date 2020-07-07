@@ -35,7 +35,7 @@ export function subscribeMsg() {
           break
         case 'notificationClicked':
           console.log('notificationClicked 通知点击', notification)
-          global.navigation.push('UserMsgList')
+          global.navigation.push('MsgList')
           store.dispatch({ type: MSG.MAKE_MSG_READ, payload: notification })
           break
         default:

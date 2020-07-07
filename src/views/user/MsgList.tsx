@@ -10,7 +10,7 @@ import { dateFormatter } from '@utils/form/Formatters'
 import { MSG } from '@models/msg'
 import { useReduxDispatch } from '@auraxy/redux-usage'
 
-const UserMsgList: React.FC<ScreenProps> = ({ onScroll }) => {
+const MsgList: React.FC<ScreenProps> = ({ onScroll }) => {
   const list = useSelector(state => {
     return state.msg?.msgList || []
   })
@@ -80,4 +80,4 @@ const UserMsgList: React.FC<ScreenProps> = ({ onScroll }) => {
   )
 }
 
-export default UserMsgList
+export default MsgList

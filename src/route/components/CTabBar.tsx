@@ -11,7 +11,7 @@ const tools = [
   {
     label: 'Msg List',
     icon: 'icon-menu',
-    value: 'UserMsgList',
+    value: 'MsgList',
   },
   {
     label: 'Tab1',

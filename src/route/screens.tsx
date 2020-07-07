@@ -1,7 +1,7 @@
 import React from 'react'
 import { gntRoute } from '@/route/gntRoute'
 import Scan from '@components/Scan'
-import UserMsgList from '@/views/user/UserMsgList'
+import MsgList from '@/views/user/MsgList'
 import CButton from '@components/CButton'
 import SizeVariable from '@styles/SizeVariable'
 import ColorVariable from '@styles/ColorVariable'
@@ -70,8 +70,8 @@ export default {
       headerShadowDisabled: true,
     },
   ),
-  UserMsgList: gntRoute(
-    UserMsgList,
+  MsgList: gntRoute(
+    MsgList,
     {
       title: '消息中心',
       headerRight: () => (

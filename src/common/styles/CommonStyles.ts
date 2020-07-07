@@ -4,7 +4,7 @@ import ColorVariable from './ColorVariable'
 import SizeVariable from './SizeVariable'
 
 export default StyleSheet.create({
-  vipCard: {
+  card: {
     width: SCREEN_WIDTH - SizeVariable.padding * 2,
     marginTop: SizeVariable.padding,
     marginHorizontal: SizeVariable.padding,
