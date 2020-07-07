@@ -1,7 +1,7 @@
 import React from 'react'
 import { gntRoute } from '@/route/gntRoute'
 import Scan from '@components/Scan'
-import UserMsgList from '@/views/UserMsgList'
+import UserMsgList from '@/views/user/UserMsgList'
 import CButton from '@components/CButton'
 import SizeVariable from '@styles/SizeVariable'
 import ColorVariable from '@styles/ColorVariable'
