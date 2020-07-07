@@ -19,13 +19,10 @@ const SignIn: React.FC<ScreenProps> = () => {
   })
 
   const onPress = () => {
-    if (form.pristine) {
-      return CAlert('手机号不能为空')
-    } else if (!form.valid) {
-      return CAlert(form.errorText)
-    } else {
-      return User.signIn(form.data).catch(CAlert)
-    }
+    return form
+      .submit()
+      .then(data => User.signIn(data))
+      .catch(CAlert)
   }
 
   return (

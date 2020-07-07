@@ -34,7 +34,7 @@ export class User {
       password_confirmation: data.confirmPwd,
       code: data.verifyCode,
       recommend_code: data.recommendCode,
-      client_id: store.getState().getUI.clientId,
+      client_id: '',
       platform: isIOS ? 'ios' : 'android',
     }).then(userInfo => {
       LocalStorage.update('Token', signInToken(userInfo.token))
@@ -49,7 +49,7 @@ export class User {
     return Http.post('/login', {
       username: data.phone,
       password: data.password,
-      client_id: store.getState().getUI.clientId,
+      client_id: '',
       platform: isIOS ? 'ios' : 'android',
     }).then(userInfo => {
       LocalStorage.update('Token', signInToken(userInfo.token))

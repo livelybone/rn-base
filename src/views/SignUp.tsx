@@ -63,15 +63,14 @@ const SignUp: React.FC<ScreenProps> = () => {
   const onPress = () => {
     if (!agree) {
       return CAlert('请阅读并同意用户协议！')
-    } else if (form.pristine) {
-      return CAlert('手机号不能为空')
-    } else if (!form.valid) {
-      return CAlert(form.errorText)
     } else {
-      return User.signUp(form.data).catch(e => {
-        CAlert(e)
-        source.getData()
-      })
+      return form
+        .submit()
+        .then(data => User.signUp(data))
+        .catch(e => {
+          CAlert(e)
+          source.getData()
+        })
     }
   }
 

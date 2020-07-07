@@ -34,13 +34,13 @@ const ForgetPwd: React.FC<ScreenProps> = () => {
   })
 
   const onPress = () => {
-    if (form.pristine) {
-      return CAlert('手机号不能为空')
-    } else if (!form.valid) {
-      return CAlert(form.errorText)
-    } else {
-      return User.forgetPwd(form.data)
-    }
+    return form
+      .submit()
+      .then(data => User.forgetPwd(data))
+      .catch(e => {
+        CAlert(e)
+        source.getData()
+      })
   }
 
   const source = useImgCaptcha()

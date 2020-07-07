@@ -8,12 +8,6 @@ export const MSG = {
   MAKE_ALL_MSG_READ: 'MAKE_ALL_MSG_READ',
 }
 
-export const GetUIStatus = {
-  Pending: '0',
-  Started: '1',
-  Stopped: '2',
-}
-
 export default {
   namespace: 'msg',
   state: {
