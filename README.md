@@ -40,3 +40,10 @@ npm run ios
 npm run build:ios
 ```
 
+## Solutions of some bugs
+
+### Cannot find the real App.tsx file
+Try:
+```bash
+npm run reset-cache
+```
