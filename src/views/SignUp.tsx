@@ -43,8 +43,8 @@ const SignUp: React.FC<ScreenProps> = () => {
   const source = useImgCaptcha()
 
   const options = {
-    uri: source.data.uri,
-    refresh: source.getData,
+    uri: source[0].uri,
+    refresh: source[1],
     sendCode: () => {
       const item = form.getItemByName('phone')!
       if (!item.valid) {
@@ -54,7 +54,7 @@ const SignUp: React.FC<ScreenProps> = () => {
         return Captcha.send({
           type: CodeType.SignUp,
           ...getWithoutProps(form.data, ['password']),
-          img_id: source.data.id,
+          img_id: source[0].id,
         })
       }
     },
@@ -69,7 +69,7 @@ const SignUp: React.FC<ScreenProps> = () => {
         .then(data => User.signUp(data))
         .catch(e => {
           CAlert(e)
-          source.getData()
+          source[1]()
         })
     }
   }

@@ -9,7 +9,7 @@ import useMounted from '@livelybone/use-mounted'
 import CAlert from '@components/CAlert'
 
 const Article: React.FC<ScreenProps> = () => {
-  const info = useAsyncData(
+  const [info, getInfo] = useAsyncData(
     () =>
       Msg.detail(global.route.params?.id).then(res => {
         // global.navigation.setOptions({ title: res.title })
@@ -20,7 +20,7 @@ const Article: React.FC<ScreenProps> = () => {
   )
 
   useMounted(() => {
-    info.getData()
+    getInfo()
   })
 
   return (
@@ -30,7 +30,7 @@ const Article: React.FC<ScreenProps> = () => {
       source={{
         html: ArticleTemplate,
       }}
-      injectedJavaScript={injectedJavaScript(info.data)}
+      injectedJavaScript={injectedJavaScript(info)}
     />
   )
 }

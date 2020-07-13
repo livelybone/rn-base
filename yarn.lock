@@ -916,10 +916,10 @@
   dependencies:
     "@livelybone/singleton" "^1.1.3"
 
-"@livelybone/use-async-data@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@livelybone/use-async-data/-/use-async-data-1.1.2.tgz#a4a1132a1319116fd48497789fa0da0ea7d5c28a"
-  integrity sha512-qC5s5Iit5JDMDhWLbxisGOWJsw4/adomcceY8j1Ln77Y82wTC6JdhzKoonRVUbsiwmsuZWWzFFcfevfZYh910w==
+"@livelybone/use-async-data@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/@livelybone/use-async-data/download/@livelybone/use-async-data-2.0.0.tgz#f8213ffb2122b4f7d5fb5d7d482ef6e121210d45"
+  integrity sha1-+CE/+yEitPfV+119SC724SEhDUU=
 
 "@livelybone/use-count-down@^1.0.0":
   version "1.0.0"

@@ -39,15 +39,15 @@ const ForgetPwd: React.FC<ScreenProps> = () => {
       .then(data => User.forgetPwd(data))
       .catch(e => {
         CAlert(e)
-        source.getData()
+        source[1]()
       })
   }
 
   const source = useImgCaptcha()
 
   const options = {
-    uri: source.data.uri,
-    refresh: source.getData,
+    uri: source[0].uri,
+    refresh: source[1],
     sendCode: () => {
       const item = form.getItemByName('phone')!
       if (!item.valid) {
@@ -57,7 +57,7 @@ const ForgetPwd: React.FC<ScreenProps> = () => {
         return Captcha.send({
           type: CodeType.ForgetSignInPwd,
           ...getWithoutProps(form.data, ['password', 'confirmPwd']),
-          img_id: source.data.id,
+          img_id: source[0].id,
         })
       }
     },

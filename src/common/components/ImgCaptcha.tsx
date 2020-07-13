@@ -32,7 +32,7 @@ export function useImgCaptcha() {
   )
 
   useMounted(() => {
-    source.getData()
+    source[1]()
   })
 
   return source
