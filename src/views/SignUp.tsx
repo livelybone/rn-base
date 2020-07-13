@@ -13,7 +13,6 @@ import { Captcha, CodeType } from '@/api/Capcha'
 import { useForm } from '@livelybone/react-form'
 import { pendingPromise } from '@utils/CommonFn'
 import { User } from '@/api/User'
-import { AppRoutes } from '@/route'
 import { useFocusEffect } from '@react-navigation/native'
 import { useImgCaptcha } from '@components/ImgCaptcha'
 import CCheckbox from '@components/CCheckbox'
@@ -52,8 +51,8 @@ const SignUp: React.FC<ScreenProps> = () => {
         return pendingPromise()
       } else {
         return Captcha.send({
+          ...form.data,
           type: CodeType.SignUp,
-          ...getWithoutProps(form.data, ['password']),
           img_id: source[0].id,
         })
       }
@@ -114,7 +113,7 @@ const SignUp: React.FC<ScreenProps> = () => {
           fontSize={SizeVariable.fontSubContent}
           onPress={() => {
             global.navigation.push(
-              ...AppRoutes.Article({ id: 'user-agreement' }),
+              ...global.AppRoutes.Article({ id: 'user-agreement' }),
             )
           }}
         >

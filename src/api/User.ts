@@ -5,7 +5,6 @@ import LocalStorage from '@/localStorage'
 import { signInToken } from '@/localStorage/schemas/Token'
 import { store } from '@/store'
 import { USER } from '@/store/models/user'
-import { AppRoutes } from '@/route'
 
 export class User {
   static getUserInfo() {
@@ -40,7 +39,7 @@ export class User {
       LocalStorage.update('Token', signInToken(userInfo.token))
       const redirect = global.route.params?.redirect
       if (redirect) global.navigation.replace(redirect)
-      else global.navigation.replace(...AppRoutes.Home())
+      else global.navigation.replace(...global.AppRoutes.Home())
       User.getUserInfo()
     })
   }
@@ -55,7 +54,7 @@ export class User {
       LocalStorage.update('Token', signInToken(userInfo.token))
       const redirect = global.route.params?.redirect
       if (redirect) global.navigation.replace(redirect)
-      else global.navigation.replace(...AppRoutes.Home())
+      else global.navigation.replace(...global.AppRoutes.Home())
       User.getUserInfo()
     })
   }
@@ -64,7 +63,7 @@ export class User {
     return Promise.resolve().then(() => {
       LocalStorage.update('Token', signInToken(''))
       store.dispatch({ type: USER.GET_USER_INFO, payload: null })
-      global.navigation.replace(...AppRoutes.SignIn())
+      global.navigation.replace(...global.AppRoutes.SignIn())
     })
   }
 

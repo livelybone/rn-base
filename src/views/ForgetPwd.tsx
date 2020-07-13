@@ -12,7 +12,6 @@ import SizeVariable from '@styles/SizeVariable'
 import { getWithoutProps } from '@utils/Object'
 import { Captcha, CodeType } from '@/api/Capcha'
 import { useForm } from '@livelybone/react-form'
-import { AppRoutes } from '@/route'
 import { pendingPromise } from '@utils/CommonFn'
 import { useFocusEffect } from '@react-navigation/native'
 import { useImgCaptcha } from '@components/ImgCaptcha'
@@ -55,8 +54,8 @@ const ForgetPwd: React.FC<ScreenProps> = () => {
         return pendingPromise()
       } else {
         return Captcha.send({
+          ...form.data,
           type: CodeType.ForgetSignInPwd,
-          ...getWithoutProps(form.data, ['password', 'confirmPwd']),
           img_id: source[0].id,
         })
       }
@@ -95,7 +94,7 @@ const ForgetPwd: React.FC<ScreenProps> = () => {
           borderColor="transparent"
           color={ColorVariable.main}
           onPress={() => {
-            global.navigation.push(...AppRoutes.SignUp({ formData: form.data }))
+            global.navigation.push(...global.AppRoutes.SignUp({ formData: form.data }))
           }}
         >
           立即注册

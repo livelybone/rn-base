@@ -14,7 +14,7 @@ import CAlert from '@components/CAlert'
 const baseURL = '/'
 
 export function joinBaseUrl(url: string) {
-  return `${baseURL}/${url}`.replace(/\/+/g, '/')
+  return `${baseURL}/${url}`.replace(/(^https?:\/)?\/+/g, '$1/')
 }
 
 export function getToken() {

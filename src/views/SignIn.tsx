@@ -10,7 +10,6 @@ import ColorVariable from '@styles/ColorVariable'
 import CommonStyles from '@styles/CommonStyles'
 import SizeVariable from '@styles/SizeVariable'
 import { getWithoutProps } from '@utils/Object'
-import { AppRoutes } from '@/route'
 import { useForm } from '@livelybone/react-form'
 
 const SignIn: React.FC<ScreenProps> = () => {
@@ -53,7 +52,7 @@ const SignIn: React.FC<ScreenProps> = () => {
         margin="30 0 0"
         onPress={() =>
           global.navigation.push(
-            ...AppRoutes.ForgetPwd({ formData: form.data }),
+            ...global.AppRoutes.ForgetPwd({ formData: form.data }),
           )
         }
       >
@@ -72,7 +71,7 @@ const SignIn: React.FC<ScreenProps> = () => {
           borderColor="transparent"
           color={ColorVariable.main}
           onPress={() => {
-            global.navigation.push(...AppRoutes.SignUp({ formData: form.data }))
+            global.navigation.push(...global.AppRoutes.SignUp({ formData: form.data }))
           }}
         >
           立即注册

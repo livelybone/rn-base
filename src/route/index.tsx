@@ -21,14 +21,16 @@ declare global {
       { [name: string]: RootStackParamList[RouteTypeKeys] },
       string
     >
+
+    AppRoutes: {
+      [key in RouteTypeKeys]: (
+        params?: Partial<RootStackParamList[key]>,
+      ) => [key, RootStackParamList[key]]
+    }
   }
 }
 
-export const AppRoutes: {
-  [key in RouteTypeKeys]: (
-    params?: Partial<RootStackParamList[key]>,
-  ) => [key, RootStackParamList[key]]
-} = Object.keys(screens).reduce((pre, k) => {
+global.AppRoutes = Object.keys(screens).reduce((pre, k) => {
   return {
     ...pre,
     [k]: params => [k, { ...screens[k].initialParams, ...params }],

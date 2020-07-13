@@ -6,7 +6,6 @@ import CButton from './CButton'
 import CSvg from './CSvg'
 import CText from './CText'
 import Modal from './Modal'
-import { AppRoutes } from '@/route'
 
 const styles = StyleSheet.create({
   wrap: {
@@ -55,7 +54,7 @@ const ModalSignIn: React.FC<Props> = ({ modalRef }) => {
         </CText>
         <CButton
           style={styles.button}
-          onPress={() => global.navigation.push(...AppRoutes.SignIn())}
+          onPress={() => global.navigation.push(...global.AppRoutes.SignIn())}
         >
           {({ color }) => <CText style={{ color }}>立即登录</CText>}
         </CButton>
@@ -65,7 +64,7 @@ const ModalSignIn: React.FC<Props> = ({ modalRef }) => {
           borderColor="transparent"
           margin="20 0 0"
           onPress={() =>
-            global.navigation.push(...AppRoutes.SignUp({ formData: {} }))
+            global.navigation.push(...global.AppRoutes.SignUp({ formData: {} }))
           }
         >
           {({ color }) => <CText style={{ color }}>还未注册</CText>}
