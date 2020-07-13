@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { View } from 'react-native'
 import CAlert from '@components/CAlert'
 import CButton from '@components/CButton'
@@ -13,7 +13,6 @@ import { Captcha, CodeType } from '@/api/Capcha'
 import { useForm } from '@livelybone/react-form'
 import { pendingPromise } from '@utils/CommonFn'
 import { User } from '@/api/User'
-import { useFocusEffect } from '@react-navigation/native'
 import { useImgCaptcha } from '@components/ImgCaptcha'
 import CCheckbox from '@components/CCheckbox'
 
@@ -34,10 +33,10 @@ const SignUp: React.FC<ScreenProps> = () => {
     },
   )
 
-  useFocusEffect(() => {
+  useEffect(() => {
     const formData = global.route.params?.formData
     if (formData) form.itemsChange(formData, false)
-  })
+  }, [form])
 
   const source = useImgCaptcha()
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View } from 'react-native'
 import { User } from '@/api/User'
 import CAlert from '@components/CAlert'
@@ -27,10 +27,10 @@ const ForgetPwd: React.FC<ScreenProps> = () => {
     ]),
   )
 
-  useFocusEffect(() => {
+  useEffect(() => {
     const formData = global.route.params?.formData
     if (formData) form.itemsChange(formData, false)
-  })
+  }, [form])
 
   const onPress = () => {
     return form
