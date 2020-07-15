@@ -14,3 +14,6 @@ export const isIPhoneX =
   (SCREEN_HEIGHT === 812 || SCREEN_WIDTH === 812)
 
 export const DPI = 1 / StyleSheet.hairlineWidth
+
+// @ts-ignore
+export const isDev = process.env.NODE_ENV === 'development'
