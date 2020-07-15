@@ -1,6 +1,6 @@
 import React from 'react'
 import { gntRoute } from '@/route/gntRoute'
-import Scan from '@components/Scan'
+import Scanner from '@components/Scanner'
 import MsgList from '@/views/user/MsgList'
 import CButton from '@components/CButton'
 import SizeVariable from '@styles/SizeVariable'
@@ -20,7 +20,7 @@ export default {
       title: 'Home',
       headerLeft: () => <></>,
       headerRight: () => (
-        <Scan
+        <Scanner
           color={ColorVariable.font}
           onSuccess={({ data }) => {
             console.log(data)

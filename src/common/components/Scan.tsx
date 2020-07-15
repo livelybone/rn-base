@@ -22,7 +22,7 @@ interface Props {
   onSuccess?: RNCameraProps['onBarCodeRead']
 }
 
-const Scan: React.FC<Props> = ({
+const Scanner: React.FC<Props> = ({
   size = 20,
   color = ColorVariable.white,
   onSuccess,
@@ -39,7 +39,7 @@ const Scan: React.FC<Props> = ({
   )
 }
 
-export default Scan
+export default Scanner
 
 export interface CameraRefProps {
   show(cd?: RNCameraProps['onBarCodeRead']): void

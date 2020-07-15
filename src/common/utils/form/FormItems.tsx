@@ -1,7 +1,7 @@
 import { FormItemsManager } from '@livelybone/form'
 import React from 'react'
 import CText from '@components/CText'
-import Scan from '@components/Scan'
+import Scanner from '@components/Scanner'
 import SendVerifyCode from '@components/SendVerifyCode'
 import ColorVariable from '@styles/ColorVariable'
 import SizeVariable from '@styles/SizeVariable'
@@ -33,7 +33,7 @@ const items = {
     placeholder: '输入地址',
     suffix: ({ scan }) => (
       <>
-        <Scan size={16} color={ColorVariable.main} onSuccess={scan} />
+        <Scanner size={16} color={ColorVariable.main} onSuccess={scan} />
       </>
     ),
   },
