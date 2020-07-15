@@ -10,6 +10,7 @@ import { StorageUtils } from '@livelybone/storage'
 import LocalStorage from '@/localStorage'
 import { signInToken, tokenQuery } from '@/localStorage/schemas/Token'
 import CAlert from '@components/CAlert'
+import { isDev } from '@utils/Env'
 
 const baseURL = '/'
 
@@ -51,6 +52,7 @@ function errorDeal(e: RequestError) {
   e.message = (e.data && e.data.msg) || e.message
   if (e.message === 'Network request failed') e.message = '网络出错了，请重试'
   else if (!e.message) e.message = (CodeType as any)[e.resCode || 1].defaultMsg
+  if (isDev) console.warn(e.url, e)
   return Promise.reject(e)
 }
 
@@ -92,6 +94,7 @@ Http.interceptors.response.use(res => {
     return Promise.reject(res)
   }
 
+  if (isDev) console.warn(res.url, res, data.data)
   return data.data
 }, errorDeal)
 
