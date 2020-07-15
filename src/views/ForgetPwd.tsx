@@ -27,10 +27,10 @@ const ForgetPwd: React.FC<ScreenProps> = () => {
     ]),
   )
 
+  const formData = global.route.params?.formData
   useEffect(() => {
-    const formData = global.route.params?.formData
-    if (formData) form.itemsChange(formData, false)
-  }, [form])
+    if (formData) form.itemsChange(formData)
+  }, [form, formData])
 
   const onPress = () => {
     return form
