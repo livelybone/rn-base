@@ -24,7 +24,7 @@ export function getToken() {
 }
 
 const CodeType = {
-  0: { defaultMsg: '' },
+  200: { defaultMsg: '' },
   1: { defaultMsg: '请求失败!' },
   403: { defaultMsg: '登录过期，请重新登陆！' },
 }
@@ -36,7 +36,7 @@ interface ApiResult<T = any> {
 }
 
 function isError(data: ApiResult) {
-  return data.code !== 0
+  return data.code !== 200
 }
 
 function errorDeal(e: RequestError) {
@@ -73,12 +73,14 @@ const Http = new HttpClass(EngineName.Fetch, {
 })
 
 Http.interceptors.request.use(async conf => {
+  const needAuth = !conf.noAuth
+  const token = getToken()
   return {
     ...conf,
     headers: {
       ...conf.headers,
       Connection: 'close',
-      Authorization: `Bearer ${getToken()}`,
+      Authorization: needAuth && token ? `Bearer ${token}` : '',
     },
   }
 })
