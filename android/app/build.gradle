@@ -128,6 +128,11 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
     defaultConfig {
         applicationId "com.myapp"
         minSdkVersion rootProject.ext.minSdkVersion
