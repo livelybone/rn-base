@@ -14,6 +14,7 @@ import { useIsFocused } from '@react-navigation/native'
 import { useStatusBarColorTransitionWhenScroll } from '@utils/OtherHooks'
 import useWatch from 'use-watch'
 import CHeaderBackground from '@/route/components/CHeaderBackground'
+import { useGuard } from '@/route/guard'
 
 declare global {
   interface ScreenProps {
@@ -91,6 +92,8 @@ export default function CWrapper(
   options?: (p: any) => StackNavigationOptions,
 ): React.FC<ScreenProps> {
   return props => {
+    useGuard()
+
     const ref = useRef<Global['currStatusBar']>(null)
 
     const isFocused = useIsFocused()
