@@ -1,9 +1,11 @@
 import { useEffect } from 'react'
 import { store } from '@/store'
 import { User } from '@/api/User'
+import { getToken } from '@services/Http'
 
 export function useGuard() {
   useEffect(() => {
-    if (!store.getState().user.userInfo) User.getUserInfo()
+    const token = getToken()
+    if (token && !store.getState().user.userInfo) User.getUserInfo()
   }, [])
 }
