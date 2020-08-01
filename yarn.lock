@@ -938,10 +938,10 @@
   resolved "https://registry.npm.taobao.org/@livelybone/use-mounted/download/@livelybone/use-mounted-1.0.2.tgz#020e2caf37c1eb2f6e782e10a5db7ff33d7ce592"
   integrity sha1-Ag4srzfB6y9ueC4Qpdt/8z185ZI=
 
-"@react-native-community/cli-debugger-ui@^4.9.0":
-  version "4.9.0"
-  resolved "https://registry.npm.taobao.org/@react-native-community/cli-debugger-ui/download/@react-native-community/cli-debugger-ui-4.9.0.tgz#4177764ba69243c97aa26829d59d9501acb2bd71"
-  integrity sha1-QXd2S6aSQ8l6omgp1Z2VAayyvXE=
+"@react-native-community/cli-debugger-ui@4.7.0", "@react-native-community/cli-debugger-ui@^4.9.0":
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-4.7.0.tgz#4a8689f56b99378b24bbbf0ff6a89869d667f013"
+  integrity sha512-Z/xJ08Wz3J2fKDPrwxtQ44XSHnWsF6dnT0H2AANw63bWjnrR0E3sh8Nk8/oO+j9R7LH8S0+NHJdlniXYtL/bNg==
   dependencies:
     serve-static "^1.13.1"
 
@@ -5356,8 +5356,8 @@ natural-compare@^1.4.0:
 
 needle@^2.5.0:
   version "2.5.0"
-  resolved "https://registry.npm.taobao.org/needle/download/needle-2.5.0.tgz#e6fc4b3cc6c25caed7554bd613a5cf0bac8c31c0"
-  integrity sha1-5vxLPMbCXK7XVUvWE6XPC6yMMcA=
+  resolved "https://registry.yarnpkg.com/needle/-/needle-2.5.0.tgz#e6fc4b3cc6c25caed7554bd613a5cf0bac8c31c0"
+  integrity sha512-o/qITSDR0JCyCKEQ1/1bnUXMmznxabbwi/Y4WwJElf+evwJNFNwIDMCCt5IigFVxgeGBJESLohGtIS9gEzo1fA==
   dependencies:
     debug "^3.2.6"
     iconv-lite "^0.4.4"
@@ -5419,8 +5419,8 @@ node-notifier@^5.4.2:
 
 node-pre-gyp@^0.15.0:
   version "0.15.0"
-  resolved "https://registry.npm.taobao.org/node-pre-gyp/download/node-pre-gyp-0.15.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnode-pre-gyp%2Fdownload%2Fnode-pre-gyp-0.15.0.tgz#c2fc383276b74c7ffa842925241553e8b40f1087"
-  integrity sha1-wvw4Mna3TH/6hCklJBVT6LQPEIc=
+  resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.15.0.tgz#c2fc383276b74c7ffa842925241553e8b40f1087"
+  integrity sha512-7QcZa8/fpaU/BKenjcaeFF9hLz2+7S9AqyXFhlH/rilsQ/hPZKK32RtR5EQHJElgu+q5RfbJ34KriI79UWaorA==
   dependencies:
     detect-libc "^1.0.2"
     mkdirp "^0.5.3"
@@ -6239,9 +6239,9 @@ readdirp@~3.4.0:
     picomatch "^2.2.1"
 
 realm@^6.0.2:
-  version "6.0.2"
-  resolved "https://registry.npm.taobao.org/realm/download/realm-6.0.2.tgz#d51abb9be03ddbf5a16fbe9c65cb8e09889c7d4b"
-  integrity sha1-1Rq7m+A92/Whb76cZcuOCYicfUs=
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/realm/-/realm-6.0.3.tgz#a4ab768ea05918eda9bfde7cd385d528c496b0e2"
+  integrity sha512-iQhVmVrhxC3bSlWWjyT1Vdi8SneesSlyDq5xf3TIZPvdZzjKLAja7UylEW1Ac7PsZqdDmxToHrr1BinZX8z/qQ==
   dependencies:
     command-line-args "^4.0.6"
     deepmerge "2.1.0"

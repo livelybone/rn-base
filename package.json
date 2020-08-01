@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "svg": "node ./static/SvgDealProcess.js",
-    "android": "npm run android:clean && react-native run-android && npm run svg",
-    "ios": "npm run pod && react-native run-ios && npm run svg",
+    "android": "npm run android:clean && npm run start && react-native run-android && npm run svg",
+    "ios": "npm run pod && npm run start && react-native run-ios && npm run svg",
     "build:android": "cross-env NODE_ENV=production npm run svg && react-native bundle --platform android --entry-file index.js --bundle-output ./android/app/src/main/assets/index.android.bundle --assets-dest ./android/app/build/intermediates/res/merged/release/ --dev false --reset-cache && cd ./android && ./gradlew clean && ./gradlew assembleRelease && cd ..",
     "build:ios": "cross-env NODE_ENV=production npm run svg && npm run pod && react-native bundle --platform ios --entry-file index.js --bundle-output ./ios/MyApp/main.jsbundle --assets-dest  ./ios/build --dev false --reset-cache",
-    "start": "react-native start --reset-cache",
-    "reset-cache": "npm start -- --reset-cache",
+    "start": "react-native start --reset-cache &",
+    "reset-cache": "react-native start --reset-cache",
     "test": "jest",
     "pod": "cd ios && pod install && cd ..",
     "android:clean": "cd android && ./gradlew clean && cd ..",
@@ -73,5 +73,6 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "resolutions": { "@react-native-community/cli-debugger-ui": "4.7.0" }
 }
