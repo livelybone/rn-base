@@ -13,6 +13,7 @@
     "test": "jest",
     "pod": "cd ios && pod install && cd ..",
     "android:clean": "cd android && ./gradlew clean && cd ..",
+    "keystore": "cd android/app && keytool -genkey -v -keystore android/app/release.keystore -alias release -keyalg RSA -keysize 2048 -validity 36500",
     "tsc": "yarn tsc",
     "lint": "eslint . --fix"
   },
