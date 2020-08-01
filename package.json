@@ -74,5 +74,8 @@
   "jest": {
     "preset": "react-native"
   },
-  "resolutions": { "@react-native-community/cli-debugger-ui": "4.7.0" }
+  "resolutions": {
+    "@react-native-community/cli-debugger-ui": "4.7.0",
+    "lodash": "4.17.19"
+  }
 }
