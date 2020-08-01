@@ -1,7 +1,9 @@
+import json from '../../../package.json'
+
 /**
  * 版本命名 X.X.X
  * */
-export const Version = '1.0.0'
+export const Version = json.version
 
 export const VersionCompare = {
   Equal: 0,

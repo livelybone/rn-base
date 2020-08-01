@@ -1,6 +1,6 @@
 {
   "name": "native-app",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "svg": "node ./static/SvgDealProcess.js",
