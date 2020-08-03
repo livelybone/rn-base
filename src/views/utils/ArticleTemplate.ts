@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 10px 20px;
   font-size: 13px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 #title {
@@ -47,6 +47,7 @@ export default `
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no">
   <style>
   ${style}
   </style>
