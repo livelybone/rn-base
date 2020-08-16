@@ -307,7 +307,7 @@ PODS:
     - React-cxxreact (= 0.62.2)
     - React-jsi (= 0.62.2)
     - ReactCommon/callinvoker (= 0.62.2)
-  - RealmJS (6.0.2):
+  - RealmJS (6.0.3):
     - GCDWebServer
     - React
   - RNCMaskedView (0.1.10):
@@ -380,7 +380,7 @@ DEPENDENCIES:
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - boost-for-react-native
     - CocoaAsyncSocket
     - CocoaLibEvent
@@ -503,7 +503,7 @@ SPEC CHECKSUMS:
   React-RCTText: fae545b10cfdb3d247c36c56f61a94cfd6dba41d
   React-RCTVibration: 4356114dbcba4ce66991096e51a66e61eda51256
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
-  RealmJS: fa482f7607e70a17abfc5e7817cfca1042186b62
+  RealmJS: 1535446236bae0818d84188bc1a5fa2f3b9f13fa
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
   RNScreens: 62211832af51e0aebcf6e8c36bcf7dd65592f244
@@ -513,4 +513,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: a19d52d161f55ac2f8959276dc9415255519a81d
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.9.3
