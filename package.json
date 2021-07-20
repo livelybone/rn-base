@@ -40,7 +40,7 @@
     "react-native-safe-area-context": "^3.0.5",
     "react-native-screens": "^2.8.0",
     "react-native-svg": "^12.1.0",
-    "react-native-webview": "8",
+    "react-native-webview": "11",
     "react-redux": "^7.2.0",
     "realm": "^6.0.2",
     "redux": "^4.0.5",
